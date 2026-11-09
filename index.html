@@ -7,29 +7,51 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="pexels-cottonbro-cg-studio-8817536.jpg" type="image/x-icon">
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,1&display=swap" rel="stylesheet">
+    <!-- <script src="script.js"></script> -->
 </head>
 <body>
 
-<!-- BEGINING OF NAVBAR SECTION PC -->
-   <section class="personal-port">
+<!-- NAVBAR SECTION -->
 
-   <div class="web-img">
-    <!-- <img src="parco-chan-BeNerxxCKLU-unsplash.jpg" alt="" height="936px"> -->
-   </div>
+<section class="personal-port">
+
     <div class="navbar">
+
+        <!-- WELCOME -->
         <div class="navbar-1">
             <h2>WELCOME</h2>
         </div>
-        <div class="navbar-text">
-            <a href="index.html" class="home-link">HOME</a>
-            <a href="" About-link>ABOUT</a>
-            <a href="" class="Projects-link">PROJECTS</a>
-            <a href="" class="Contacts-link">CONTACTS</a>
+
+
+        <!-- HAMBURGER BUTTON -->
+        <button class="hamburger"
+                id="hamburger"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- NAVIGATION LINKS -->
+        <div class="navbar-text" id="navbarText">
+
+            <a href="index.html">HOME</a>
+
+            <a href="about.html">ABOUT</a>
+
+            <a href="projects.html">PROJECTS</a>
+
+            <a href="contacts.html">CONTACTS</a>
+
         </div>
+
     </div>
-    
-   </section> 
-   <!-- END OF NAVBAR SECTION PC -->
+
+</section>
 
    <!-- BEGINING OF HERO SECTION FOR PC -->
 
@@ -151,6 +173,49 @@
 
     </div>
    </section>
+
+   <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const hamburger = document.getElementById("hamburger");
+
+    const navbarText = document.getElementById("navbarText");
+
+
+    // OPEN AND CLOSE MENU
+
+    hamburger.addEventListener("click", function() {
+
+        navbarText.classList.toggle("active");
+
+        const isOpen = navbarText.classList.contains("active");
+
+        hamburger.setAttribute("aria-expanded", isOpen);
+
+    });
+
+
+    // CLOSE MENU WHEN A LINK IS CLICKED
+
+    navbarText.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", function() {
+
+            navbarText.classList.remove("active");
+
+            hamburger.setAttribute("aria-expanded", "false");
+
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
